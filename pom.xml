@@ -13,6 +13,11 @@
     <description>This is a plugin for Atlassian Bamboo to expire artifects after passing specific point in build plan.</description>
     <packaging>atlassian-plugin</packaging>
 
+    <organization>
+        <name>Sascha Grebe</name>
+        <url></url>
+    </organization>
+
     <licenses>
         <license>
             <name>Apache 2</name>

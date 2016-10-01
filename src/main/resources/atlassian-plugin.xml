@@ -20,5 +20,10 @@
 
         <context>expire-artifact-plugin</context>
     </web-resource>
-    
+
+    <taskType key="expireArtifactTask" name="Expire Artifact Task" class="de.sagr.ci.bamboo.impl.ArtifactExpiryTask">
+        <description>Remove the artifact from build.</description>
+        <!-- configuration class="de.sagr.ci.bamboo.impl.ArtifactExpiryTaskConfigurator" / -->
+    </taskType>
+
 </atlassian-plugin>

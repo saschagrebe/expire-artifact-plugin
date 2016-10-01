@@ -16,8 +16,7 @@ public class MyPluginComponentImpl implements MyPluginComponent
     private final ApplicationProperties applicationProperties;
 
     @Inject
-    public MyPluginComponentImpl(final ApplicationProperties applicationProperties)
-    {
+    public MyPluginComponentImpl(final ApplicationProperties applicationProperties) {
         this.applicationProperties = applicationProperties;
     }
 

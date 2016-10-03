@@ -23,7 +23,9 @@
 
     <taskType key="expireArtifactTask" name="Expire Artifact Task" class="de.sagr.ci.bamboo.impl.ArtifactExpiryTask">
         <description>Remove the artifact from build.</description>
-        <!-- configuration class="de.sagr.ci.bamboo.impl.ArtifactExpiryTaskConfigurator" / -->
+        <configuration class="de.sagr.ci.bamboo.impl.ArtifactExpiryTaskConfigurator" />
+        <resource type="freemarker" name="edit" location="templates/editExpireArtifactTask.ftl"/>
+        <resource type="freemarker" name="view" location="templates/viewExpireArtifactTask.ftl"/>
     </taskType>
 
 </atlassian-plugin>

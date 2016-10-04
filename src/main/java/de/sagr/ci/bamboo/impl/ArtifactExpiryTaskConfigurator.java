@@ -31,15 +31,18 @@ public class ArtifactExpiryTaskConfigurator extends AbstractTaskConfigurator {
     }
 
     private String getArtifactsToExpire(ActionParametersMap params) {
-        final List<String> artifactsNames = Arrays.asList(params.getStringArray(ARTIFACT_EXPIRY_PARAM_NAME));
+        final String[] artifactsNames = params.getStringArray(ARTIFACT_EXPIRY_PARAM_NAME);
         final StringBuilder builder = new StringBuilder();
-        final Iterator<String> iter = artifactsNames.iterator();
-        while(iter.hasNext()) {
-            builder.append(iter.next());
-            if (iter.hasNext()) {
-                builder.append(";");
+        if (artifactsNames != null) {
+            final Iterator<String> iter = Arrays.asList(artifactsNames).iterator();
+            while (iter.hasNext()) {
+                builder.append(iter.next());
+                if (iter.hasNext()) {
+                    builder.append(";");
+                }
             }
         }
+
         return builder.toString();
     }
 
@@ -47,7 +50,7 @@ public class ArtifactExpiryTaskConfigurator extends AbstractTaskConfigurator {
     public void populateContextForCreate(Map<String, Object> context) {
         super.populateContextForCreate(context);
 
-        context.put(ARTIFACT_DEFINITION_LIST, new ArrayList<String>());
+        context.put(ARTIFACT_DEFINITION_LIST, getAllArtifactDefinitions(context));
     }
 
     @Override
